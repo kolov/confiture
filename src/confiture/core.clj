@@ -9,14 +9,14 @@
   (try  (v/get conn key) 
         (catch java.net.ConnectException _ nil)))
 
-(def @sources
+(def sources
   "list of property sources" 
-  [env etcd-val])
+  (atom [env etcd-val]))
 
 (defn value [key]
   "Look up the value in all defined  sources"
   (first (filter #(not (nil? %)) (map #(% key) @sources)))
-)
+  )
 
 
 
