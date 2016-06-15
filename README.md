@@ -1,15 +1,20 @@
 # confiture
 
-A Clojure library designed to ... well, that part is up to you.
+A simple configuration library looking up configuration values from a list of sources
 
 ## Usage
 
-FIXME
+Currently, the list conists of:
+ - https://github.com/weavejester/environ
+ - etcd to localhost:4001
+ 
+The list is an atoma and can be changed by the application:
+
+    (swap! sources conj #(str "default-" %))
 
 ## License
 
 Copyright © 2016 FIXME
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the MIT License.
 # confiture
